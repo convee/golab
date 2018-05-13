@@ -20,7 +20,8 @@ func init() {
 func main() {
 	var userId int
 	var passwd string
-	fmt.Scanf("%d %s\n", &userId, &passwd)
+	fmt.Scanf("%d %s \n", &userId, &passwd)
+	fmt.Printf("id:%d,passwd:%s\n", userId, passwd)
 	conn, err := net.Dial("tcp", *tcpAddr)
 	if err != nil {
 		fmt.Println("Dialing err,", err)
