@@ -27,8 +27,10 @@ func main() {
 		fmt.Println("Dialing err,", err)
 		return
 	}
-	tcpHandler := &tcp.TcpHandler{}
-	err = tcpHandler.Login(conn, userId, passwd)
+	tcpHandler := &tcp.TcpHandler{
+		Conn: conn,
+	}
+	err = tcpHandler.Login(userId, passwd)
 	if err != nil {
 		fmt.Println("login failed,err:", err)
 		return
