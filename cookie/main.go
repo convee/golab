@@ -12,6 +12,7 @@ const (
 
 func hello(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("hello world")
+	w.Write([]byte("hello world"))
 }
 
 //设置过期时间，cookie会保存到硬盘，可以用于自动登录，记住密码
@@ -31,8 +32,17 @@ func setCookie(w http.ResponseWriter, r *http.Request) {
 		Name:  CLIENT_COOKIE_ID,
 		Value: "456",
 	})
+	w.Write([]byte("设置成功\r\n"))
 }
 
+func delCookie(w http.ResponseWriter, r *http.Request) {
+	http.SetCookie(w, &http.Cookie{
+		Name:   CLIENT_COOKIE_ID,
+		Path:   "/",
+		MaxAge: -1,
+	})
+	w.Write([]byte("删除成功"))
+}
 func getCookieHandler(w http.ResponseWriter, r *http.Request) {
 	cookie, err := r.Cookie(CLIENT_COOKIE_ID)
 	if err != nil {
@@ -40,8 +50,10 @@ func getCookieHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	fmt.Println("cookie:", cookie)
+	w.Write([]byte(cookie.Value))
 }
 func main() {
+	http.HandleFunc("/hello", hello)
 	http.HandleFunc("/", getCookieHandler)
 	http.HandleFunc("/set", setCookieExpired)
 	http.HandleFunc("/set2", setCookie)
