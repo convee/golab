@@ -46,6 +46,11 @@ func syncc() {
 func chanc() {
 	fmt.Println(runtime.NumCPU())
 	runtime.GOMAXPROCS(runtime.NumCPU())
+	int_chan := make(chan int, 1)
+	string_chan := make(chan string, 1)
+	int_chan <- 1
+	string_chan <- "hello"
+	select {}
 }
 func main() {
 	// parseStudent()
