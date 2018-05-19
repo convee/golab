@@ -1,5 +1,6 @@
 package main
 
+//任何类型都实现了一个空接口
 import (
 	"fmt"
 )
@@ -23,6 +24,25 @@ func just(items ...interface{}) {
 		case student:
 			fmt.Printf("param %d is student, value is %v\n", index, v)
 		}
+	}
+}
+
+type MyStruct struct {
+}
+
+func (m MyStruct) String() string {
+	return ""
+}
+
+type Stringer interface {
+	String() string
+}
+
+//断言，判断一个变量是否实现了指定接口
+func check() {
+	var v MyStruct
+	if sv, ok := v.(Stringer); ok {
+		fmt.Printf("v implements String():%s\n", sv.String())
 	}
 }
 func main() {
