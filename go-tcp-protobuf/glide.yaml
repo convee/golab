@@ -1,0 +1,5 @@
+package: tcp-proto
+import:
+- package: github.com/golang/protobuf
+  subpackages:
+  - proto

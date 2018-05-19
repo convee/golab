@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package pb;
+
+message RouteNote {
+    string message = 1;
+    int64 uid =2;
+}
+
+service RouteGuide {
+    rpc RouteChat(stream RouteNote) returns (stream RouteNote) {}
+}
