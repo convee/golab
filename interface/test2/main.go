@@ -27,27 +27,20 @@ func just(items ...interface{}) {
 	}
 }
 
-type MyStruct struct {
-}
-
-func (m MyStruct) String() string {
-	return ""
-}
-
-type Stringer interface {
-	String() string
-}
-
 //断言，判断一个变量是否实现了指定接口
-func check() {
-	var v MyStruct
-	if sv, ok := v.(Stringer); ok {
-		fmt.Printf("v implements String():%s\n", sv.String())
+func check(a interface{}) {
+	b, ok := a.(student)
+	if ok == false {
+		fmt.Println("convert failed")
+		return
 	}
+	fmt.Println(b)
+
 }
 func main() {
 	stu := student{
 		Name: "Wangkang",
 	}
 	just(100, 1.00, "this is a string", stu)
+	check(stu)
 }
