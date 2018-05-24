@@ -19,9 +19,8 @@ func main() {
 			fmt.Println(v)
 		case v := <-ch2:
 			fmt.Println(v)
-		default:
+		case <-time.After(time.Microsecond): //todo 存在内存泄漏
 			fmt.Println("get time out")
-			time.Sleep(time.Second)
 		}
 	}
 }
