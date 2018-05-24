@@ -31,6 +31,7 @@ func isort1(a []int) {
 		}
 	}
 }
+
 func main() {
 	b := [...]int{8, 7, 5, 4, 3, 10, 15}
 	isort1(b[:])
