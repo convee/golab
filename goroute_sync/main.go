@@ -24,6 +24,8 @@ func recv(ch chan int, exitChan chan struct{}) {
 	var a struct{}
 	exitChan <- a
 }
+
+//channel同步
 func main() {
 	ch := make(chan int, 10)
 	exitChan := make(chan struct{}, 2)
