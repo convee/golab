@@ -5,12 +5,15 @@ import (
 )
 
 func reverseString(s string) string {
-	runes := []rune(s)
-	for from, to := 0, len(runes)-1; from < to; from, to = from+1, to-1 {
-		runes[from], runes[to] = runes[to], runes[from]
+
+	r := []rune(s)
+	rLen := len(r)
+	for i, j := 0, (rLen - 1); i < rLen/2; i, j = i+1, j-1 {
+		r[i], r[j] = r[j], r[i]
 	}
-	return string(runes)
+	return string(r)
 }
+
 func main() {
 	s := "hello golang语言"
 	fmt.Println(reverseString(s))
