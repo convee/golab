@@ -15,7 +15,7 @@ func trans_before(root *Tree) {
 	if root == nil {
 		return
 	}
-	fmt.Println(root)
+	fmt.Println(root.Name)
 	trans_before(root.Left)
 	trans_before(root.Right)
 }
@@ -26,7 +26,7 @@ func trans_middle(root *Tree) {
 		return
 	}
 	trans_middle(root.Left)
-	fmt.Println(root)
+	fmt.Println(root.Name)
 	trans_middle(root.Right)
 }
 
@@ -37,19 +37,27 @@ func trans_after(root *Tree) {
 	}
 	trans_after(root.Left)
 	trans_after(root.Right)
-	fmt.Println(root)
+	fmt.Println(root.Name)
 }
 
 func main() {
-	root := &Tree{Name: "tree01"}
-	left1 := &Tree{Name: "tree02"}
-	right1 := &Tree{Name: "tree04"}
-	left2 := &Tree{Name: "tree03"}
+	root := new(Tree)
+	root.Name = "tree01"
+	left1 := new(Tree)
+	left1.Name = "tree02"
 	root.Left = left1
+	right1 := new(Tree)
+	right1.Name = "tree04"
 	root.Right = right1
+	left2 := new(Tree)
+	left2.Name = "tree03"
 	left1.Left = left2
+	fmt.Println("----------trans_before-----------")
+
 	trans_before(root)
+	fmt.Println("----------trans_middle-----------")
 	trans_middle(root)
+	fmt.Println("----------trans_after-----------")
 	trans_after(root)
 
 }
