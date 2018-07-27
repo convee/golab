@@ -52,7 +52,26 @@ func chanc() {
 	string_chan <- "hello"
 	select {}
 }
+
+func twoSum(nums []int, target int) []int {
+	maps := make(map[int]int)
+	for index, value := range nums {
+		member := target - value
+		if _, ok := maps[member]; ok {
+			return []int{member, value}
+		} else {
+			maps[value] = index
+		}
+	}
+	return []int{}
+
+}
+
 func main() {
 	// parseStudent()
-	syncc()
+	// syncc()
+	nums := []int{2, 7, 11, 15}
+	a := twoSum(nums, 9)
+	fmt.Println(a)
+
 }
