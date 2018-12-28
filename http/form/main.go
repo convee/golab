@@ -10,11 +10,11 @@ import (
 const form = `
 <html>
 <body>
-<form method="post">
+<form_upload method="post">
 <input type="text" name="in1">
 <input type="text" name="in2">
 <input type="submit">
-</form>
+</form_upload>
 </body>
 </html>
 `
