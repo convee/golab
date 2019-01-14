@@ -87,7 +87,3 @@ func (stack *Stack) Print() {
 		fmt.Println(i, "=>", stack.Element[i])
 	}
 }
-
-func main() {
-
-}
