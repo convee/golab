@@ -21,6 +21,7 @@ func (s *Set) Remove(item int) {
 func (s *Set) Has(item int) bool {
 	return s.m[item]
 }
+
 func main() {
 
 }

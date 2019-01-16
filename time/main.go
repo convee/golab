@@ -17,7 +17,7 @@ func runtime() {
 }
 
 func runtimes() {
-	
+
 }
 func main() {
 	times := rand.Intn(10000)
@@ -25,4 +25,5 @@ func main() {
 	time.Sleep(time.Duration(times) * time.Microsecond)
 	fmt.Println("Hello world")
 	runtime()
+	fmt.Println('a')
 }
