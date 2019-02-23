@@ -1,7 +1,10 @@
 package main
 
+import "sync"
+
 type Set struct {
 	m map[int]bool
+	sync.RWMutex
 }
 
 func New() *Set {
@@ -11,6 +14,8 @@ func New() *Set {
 }
 
 func (s *Set) Add(item int) {
+	s.Lock()
+	defer s.Unlock()
 	s.m[item] = true
 }
 
