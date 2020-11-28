@@ -10,10 +10,10 @@ import (
 const form = `
 <html>
 <body>
-<form_upload method="post">
+<form method="post">
 <input type="text" name="in1">
 <input type="text" name="in2">
-<input type="submit">
+<input type="submit" action="/test2">
 </form_upload>
 </body>
 </html>
@@ -50,7 +50,7 @@ func logPanics(handler http.HandlerFunc) http.HandlerFunc {
 func main() {
 	http.HandleFunc("/test1", logPanics(SimpleServer))
 	http.HandleFunc("/test2", FormServer)
-	if err := http.ListenAndServe(":5002", nil); err != nil {
+	if err := http.ListenAndServe(":5001", nil); err != nil {
 		fmt.Printf("server start error:%v", err)
 		return
 	}

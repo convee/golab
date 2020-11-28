@@ -63,6 +63,7 @@ func safeGoroutine() {
 }
 
 func main() {
+	fmt.Println("hello world")
 	ch := make(chan int)
 	go func() {
 		var sum int = 0
@@ -72,4 +73,5 @@ func main() {
 		ch <- sum
 	}()
 	fmt.Println(<-ch) //45
+
 }

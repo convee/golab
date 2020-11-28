@@ -1,13 +1,21 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"net/http"
 )
 
+type Person struct {
+	Name string
+	Age  int
+}
+
 func Hello(w http.ResponseWriter, r *http.Request) {
-	fmt.Println("handle hello")
-	fmt.Fprintf(w, "hello ")
+	person := &Person{Name: "convee", Age: 20}
+	pjson, _ := json.Marshal(person)
+	fmt.Println(string(pjson))
+	fmt.Fprintf(w, string(pjson))
 }
 func main() {
 	http.HandleFunc("/hello", Hello)
