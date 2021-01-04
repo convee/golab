@@ -1,15 +1,16 @@
 package main
 
 import (
-	"github.com/golang/protobuf/proto"
 	"go-protobuf/pb"
 	"log"
+
+	"github.com/golang/protobuf/proto"
 )
 
-func main()  {
+func main() {
 	p := &pb.Person{
-		Id: proto.Int32(1),
-		Name: proto.String("wangkang"),
+		Id:   proto.Int32(1),
+		Name: proto.String("convee"),
 	}
 
 	data, err := proto.Marshal(p)

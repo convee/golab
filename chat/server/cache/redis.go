@@ -12,7 +12,7 @@ func InitRedis() {
 		MaxActive:   1024,
 		IdleTimeout: 300,
 		Dial: func() (redis.Conn, error) {
-			return redis.Dial("tcp", "106.15.205.6:6379", redis.DialPassword("wang1019"))
+			return redis.Dial("tcp", "127.0.0.1:6379", redis.DialPassword("123456"))
 		},
 	}
 	return

@@ -14,14 +14,14 @@ func init() {
 		MaxActive:   0,
 		IdleTimeout: 300,
 		Dial: func() (redis.Conn, error) {
-			return redis.Dial("tcp", "106.15.205.6:6379", redis.DialPassword("wang1019"))
+			return redis.Dial("tcp", "127.0.0.1:6379", redis.DialPassword("123456"))
 		},
 	}
 }
 func main() {
 	c := pool.Get()
 	defer c.Close()
-	_, err := c.Do("Set", "name", "wangkang")
+	_, err := c.Do("Set", "name", "convee")
 	if err != nil {
 		fmt.Println(err)
 		return

@@ -8,7 +8,7 @@ func qsort(a []int, left, right int) {
 	}
 
 	val := a[left]
-	k := left
+	k := lef
 	//确定val所在的位置
 	for i := left + 1; i <= right; i++ {
 		if a[i] < val {

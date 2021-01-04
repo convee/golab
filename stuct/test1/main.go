@@ -14,9 +14,9 @@ type student struct {
 func parseStudent() {
 	m := make(map[string]*student)
 	stus := []student{
-		student{Name: "wang1", Age: 13},
-		student{Name: "wang2", Age: 14},
-		student{Name: "wang3", Age: 15},
+		student{Name: "convee1", Age: 13},
+		student{Name: "convee2", Age: 14},
+		student{Name: "convee3", Age: 15},
 	}
 	for k, stu := range stus {
 		m[stu.Name] = &stus[k]

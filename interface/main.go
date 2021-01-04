@@ -39,7 +39,7 @@ func check(a interface{}) {
 }
 func main() {
 	stu := student{
-		Name: "Wangkang",
+		Name: "convee",
 	}
 	just(100, 1.00, "this is a string", stu)
 	check(stu)

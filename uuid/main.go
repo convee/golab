@@ -15,8 +15,8 @@ func main() {
 	spw := fmt.Sprintf("%x", c.Sum(nil))
 
 	// 指定两个(salt)
-	salt1 := "rA32iv{oAu6WHxtXu@MP"
-	salt2 := "47ebyEXn2TpwaYvFF;*R"
+	salt1 := "7GubBjsYLt4RdPpw"
+	salt2 := "So0xvPHcEN59OdGl"
 
 	// 拼接密码MD5
 	buf := bytes.NewBufferString("")

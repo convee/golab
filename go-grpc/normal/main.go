@@ -2,11 +2,12 @@ package main
 
 import (
 	"flag"
-	"net"
-	"log"
-	"google.golang.org/grpc"
 	"go-grpc/normal/pb"
+	"log"
+	"net"
+
 	"golang.org/x/net/context"
+	"google.golang.org/grpc"
 )
 
 var (
@@ -14,11 +15,10 @@ var (
 )
 
 type userServer struct {
-
 }
 
 func (u userServer) GetUserInfo(ctx context.Context, req *pb.Req) (res *pb.Res, err error) {
-	res = &pb.Res{Nick:"wang"}
+	res = &pb.Res{Nick: "convee"}
 	return
 }
 func main() {
