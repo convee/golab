@@ -11,7 +11,7 @@ type Tweet struct {
 	Message string
 }
 
-func main() {
+func main3() {
 	client, err := elastic.NewClient(elastic.SetSniff(false), elastic.SetURL("http://192.168.31.177:9200/"))
 	if err != nil {
 		fmt.Println("connect error:", err)

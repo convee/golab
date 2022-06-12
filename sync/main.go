@@ -40,6 +40,18 @@ func testRWLock() {
 	time.Sleep(time.Second * 3)
 	fmt.Println(atomic.LoadInt32(&count))
 }
+
 func main() {
-	testRWLock()
+	var wg sync.WaitGroup
+	startT := time.Now()
+	for i := 0; i < 10000; i++ {
+		go func(i int) {
+			defer wg.Done()
+			fmt.Println(i)
+			time.Sleep(time.Second)
+		}(i)
+	}
+	wg.Wait()
+	tc := time.Since(startT) //计算耗时
+	fmt.Printf("time cost = %v\n", tc)
 }

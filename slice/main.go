@@ -7,6 +7,7 @@ import "fmt"
 //2初始化
 func main() {
 	slice := []int{1, 2, 3, 4, 5}
+
 	newSlice := slice[1:3]
 	newSlice[0] = 10
 	fmt.Println(slice)
@@ -28,3 +29,9 @@ func main() {
 [1 10 3 4 5]
 [10 3]
 */
+
+
+func RemoveCopy(slice []int, i int) []int {
+    copy(slice[i:], slice[i+1:])
+    return slice[:len(slice)-1]
+}

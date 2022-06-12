@@ -36,7 +36,7 @@ func main() {
 	http.HandleFunc("/hello", Hello)
 	http.HandleFunc("/tags", Tags)
 	err := http.ListenAndServe("0.0.0.0:9091", nil)
-	if err != nil {gi
+	if err != nil {
 		fmt.Println("http listen failed")
 	}
 }
