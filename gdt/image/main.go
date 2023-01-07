@@ -30,12 +30,12 @@ type ImagesGetExample struct {
 }
 
 func (e *ImagesGetExample) Init() {
-	e.AccessToken = "ac5e9b72d8b8d108e355785f047fad19"
+	e.AccessToken = ""
 	e.TAds = ads.Init(&config.SDKConfig{
 		AccessToken: e.AccessToken,
 		IsDebug:     true,
 	}).UseProduction()
-	e.AccountId = int64(23075297)
+	e.AccountId = int64(1)
 	imageId := "image_id"
 	operator := "EQUALS"
 	e.ImagesGetOpts = &api.ImagesGetOpts{

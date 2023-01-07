@@ -15,7 +15,7 @@ func main() {
 		"a": "1",
 		"b": "2",
 	}
-	result := getSign("https://www.addnewer.com", "post", "scret", params)
+	result := getSign("https://www.convee.cn", "post", "scret", params)
 
 	fmt.Println(result)
 }

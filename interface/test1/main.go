@@ -11,3 +11,6 @@ func main() {
 	fmt.Println(reflect.TypeOf(a).Kind() == reflect.TypeOf(b).Kind())
 	reflect.DeepEqual(a, b)
 }
+
+type test struct {
+}

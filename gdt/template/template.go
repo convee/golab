@@ -35,8 +35,8 @@ func (e *AdcreativeTemplateDetailGetExample) Init() {
 	e.TAds = ads.Init(&config.SDKConfig{
 		AccessToken: e.AccessToken,
 		IsDebug:     true,
-	})
-	e.AdcreativeTemplateId = int64(1707)
+	}).UseProduction()
+	e.AdcreativeTemplateId = int64(643)
 	e.PromotedObjectType = "PROMOTED_OBJECT_TYPE_LEAD_AD"
 	e.AdcreativeTemplateDetailGetOpts = &api.AdcreativeTemplateDetailGetOpts{
 
@@ -44,7 +44,7 @@ func (e *AdcreativeTemplateDetailGetExample) Init() {
 
 		SiteSet: optional.NewInterface([]string{"SITE_SET_MOMENTS"}),
 
-		Fields: optional.NewInterface([]string{"adcreative_template_id", "adcreative_template_name", "adcreative_template_description", "adcreative_template_size", "adcreative_template_style", "adcreative_sample_image_list", "ad_attributes", "adcreative_attributes", "adcreative_elements", "support_billing_spec_list", "support_page_type", "unsupport_billing_spec_list", "unsupport_ad_attributes_spec_list", "unsupport_adcreative_attributes_spec_list", "unsupport_siteset_detail_spec", "support_dynamic_ability_spec_list"}),
+		Fields: optional.NewInterface([]string{"adcreative_template_id", "adcreative_template_name", "adcreative_template_description", "adcreative_template_size", "adcreative_template_style", "adcreative_sample_image_list", "ad_attributes", "adcreative_attributes", "adcreative_elements", "support_billing_spec_list", "support_page_type", "unsupport_billing_spec_list", "unsupport_ad_attributes_spec_list", "unsupport_adcreative_attributes_spec_list", "unsupport_siteset_detail_spec", "support_dynamic_ability_spec_list", "landing_page_config"}),
 	}
 }
 

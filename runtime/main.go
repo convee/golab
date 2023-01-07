@@ -19,8 +19,11 @@ func b() {
 }
 
 func main() {
+
 	runtime.GOMAXPROCS(1)
 	go a()
 	go b()
+	fmt.Println(runtime.NumCPU())
+	fmt.Println(runtime.NumGoroutine())
 	time.Sleep(time.Second)
 }

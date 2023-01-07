@@ -24,6 +24,7 @@ func main() {
 			}
 			break
 		}
+		
 		fmt.Println("bytes read: ", bytesread)
 		fmt.Println("bytestream to string: ", string(buffer[:bytesread]))
 	}
