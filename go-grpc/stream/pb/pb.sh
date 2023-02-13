@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-protoc server.proto --go_out=plugins=grpc:.
+protoc server.proto --go-grpc_out=.

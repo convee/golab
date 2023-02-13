@@ -2,18 +2,19 @@ package main
 
 import (
 	"flag"
-	"go-grpc/stream/pb"
-	"net"
+	"golab/go-grpc/stream/pb"
 	"log"
-	"google.golang.org/grpc"
+	"net"
 	"time"
+
+	"google.golang.org/grpc"
 )
 
-var(
+var (
 	addr = flag.String("addr", ":11002", "The Server Addr")
 )
 
-type server struct {}
+type server struct{}
 
 func (s *server) Stream(stream pb.Game_StreamServer) error {
 	log.Println("new stream")
@@ -30,7 +31,7 @@ func (s *server) Stream(stream pb.Game_StreamServer) error {
 		}
 		stream.Send(recv)
 		log.Println("send out")
-		count ++
+		count++
 		if count >= 10 {
 			break
 		}

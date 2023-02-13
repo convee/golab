@@ -14,6 +14,8 @@ import (
 	"fmt"
 	"net/http"
 
+	jsoniter "github.com/json-iterator/go"
+
 	"github.com/antihax/optional"
 	"github.com/tencentad/marketing-api-go-sdk/pkg/ads"
 	"github.com/tencentad/marketing-api-go-sdk/pkg/api"
@@ -31,16 +33,16 @@ type AdcreativeTemplateDetailGetExample struct {
 }
 
 func (e *AdcreativeTemplateDetailGetExample) Init() {
-	e.AccessToken = ""
+	e.AccessToken = "e5461bcb47ee9ab3b8841e2c6078219a"
 	e.TAds = ads.Init(&config.SDKConfig{
 		AccessToken: e.AccessToken,
 		IsDebug:     true,
 	}).UseProduction()
-	e.AdcreativeTemplateId = int64(643)
+	e.AdcreativeTemplateId = int64(1707)
 	e.PromotedObjectType = "PROMOTED_OBJECT_TYPE_LEAD_AD"
 	e.AdcreativeTemplateDetailGetOpts = &api.AdcreativeTemplateDetailGetOpts{
 
-		AccountId: optional.NewInt64(int64(1)),
+		AccountId: optional.NewInt64(int64(23238247)),
 
 		SiteSet: optional.NewInterface([]string{"SITE_SET_MOMENTS"}),
 
@@ -67,6 +69,7 @@ func main() {
 			fmt.Println("Error:", err)
 		}
 	}
-	fmt.Println("Response data:", response)
+	toString, _ := jsoniter.MarshalToString(response)
+	fmt.Println("Response data:", toString)
 	fmt.Println("Headers:", headers)
 }

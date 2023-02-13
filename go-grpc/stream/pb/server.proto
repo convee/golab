@@ -1,6 +1,6 @@
-syntax = "proto3";
-
-package pb;
+syntax = "proto3";//声明proto的版本只能是3才支持grpc
+// 声明包名
+option go_package=".;pb";
 
 service Game {
     rpc Stream(stream Message) returns (stream Message){}
